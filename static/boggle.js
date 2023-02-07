@@ -32,7 +32,6 @@ async function game_over() {
      */
     // display game over and stop submissions
     timer.innerText = "Game Over!";
-    timer.style.color = 'red';
     timer.className = 'game_over'
     submitButton.removeEventListener('click', guess);
     clearInterval(time);
@@ -40,9 +39,9 @@ async function game_over() {
     // take the current score and send it to back end
     let game_over_response = await axios.post('http://127.0.0.1:5000/update', { 'score': score });
     console.log(game_over_response);
-    const go_msg = document.createElement('span');
+    const go_msg = document.createElement('div');
     go_msg.innerText = `High Score: ${game_over_response.data.highScore} | Plays: ${game_over_response.data.numPlays}`;
-    document.body.prepend(go_msg);
+    document.querySelector('.game_over').appendChild(go_msg)
 
     // create restart link
     const restartLink = document.createElement('a')

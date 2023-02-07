@@ -1,6 +1,6 @@
 span{
     font-size: 35px;
-    color:rgb(109, 215, 190);
+    color:rgb(46, 167, 139);
     text-decoration: underline;
 }
 table{
@@ -46,7 +46,4 @@ button{
 #score{
     text-align: center;
     font-size: 70px;
-}
-.game_over{
-    margin-left: 3cm;
 }
